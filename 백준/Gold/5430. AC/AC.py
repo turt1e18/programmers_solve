@@ -23,10 +23,10 @@ for _ in range(cmdList):
         if c == "R":
             isReverse = not isReverse
         else:
-            if not dq:  # 비어 있는 경우
+            if not dq:
                 isError = True
                 break
-            # isReverse 상태에 따라 pop 또는 popleft
+            # 뒤집기 여부에 따라 pop 또는 popleft
             if isReverse:
                 dq.pop()
             else:
@@ -38,7 +38,6 @@ for _ in range(cmdList):
         # 뒤집힌 상태에 따라 덱을 리스트로 변환
         if isReverse:
             dq.reverse()
-        # 결과를 요구사항대로 문자열 형태로 저장
         result.append(f"[{','.join(map(str, dq))}]")
 
 # 한 번에 출력하여 시간 초과 방지
